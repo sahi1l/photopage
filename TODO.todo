@@ -1,0 +1,18 @@
+* DONE Read a list of names from a text file with voice parts.
+* DONE Use list.js to allow for sorting by first/last name or part, and searching.
+** DONE Use a <ul> with display:flex so it displays them across and then down.
+* DONE Each entry has an ID based on their name: lastname-firstname maybe.
+* DONE includes a photo which is stored in photo/ID-timestamp.png or .jpg or whatever.
+* DONE Each entry includes a button. Click on the button to upload a new photo whch is stored.
+* Improve the looks on phone
+* Add a photo resizer
+** dialog box which shows the photo and a square around it
+** drag on the photo to move it around in the box
+** slider to resize
+*** or pinch/zoom in mobile
+** Save the zoom and cropping numbers in the filename itself
+    "Hill,Sam@1.2+300-200@115381305.jpg" where the first number is the
+    zoom factor, the second the x offset, and the third the y offset
+*** Program will need to change the img tag CSS to compensate
+
+    
