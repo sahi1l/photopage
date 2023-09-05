@@ -42,7 +42,7 @@ function readRoster() {
     }).done((data) => {
         let result = {};
         for (let line of data.split("\n")) {
-            let [last,first,part] = line.split(",").map((x)=>{return x.trim();})
+            let [last,first,part] = line.split(",").map((x)=>{return x.trim();});
             if (!last) {continue;}
             let key = last+","+first;
             let partsort = {S: 0, A: 1, T: 2, B: 3}[part]; //not shown, used for sorting
@@ -50,10 +50,9 @@ function readRoster() {
             result[key] = {last: last, first: first, part: part, partsort: partsort, key: encodeURI(key)};
         }
         members = result;
-        console.debug(Object.values(members)[0]);
+//        console.debug(Object.values(members)[0]);
         userList = new List('members', options, Object.values(members));
         $(".upload input").on("change",upload);
-
     });
 };
 function sortButton(e) {
@@ -77,7 +76,7 @@ function upload(e) {
     let files = e.target.files;
     let key = $(e.target).attr("id");
     let img = $(e.target).siblings("img");
-    let formData = new FormData()
+    let formData = new FormData();
     formData.append("key",key);
     formData.append("file",files[0]);
     formData.append("extension",files[0].name.split(".").slice(-1)[0]);
@@ -104,5 +103,6 @@ function init() {
     getImages();
     readRoster();
     $(".sort").on("click",sortButton);
+    sortButton({target:"partsort"});
 }
 $(init);
