@@ -103,6 +103,7 @@ function init() {
     getImages();
     readRoster();
     $(".sort").on("click",sortButton);
-    sortButton({target:"partsort"});
+    setTimeout(()=> {$('[data-sort="partsort"]').trigger("click")},100);
+//    sortButton({target:"partsort"});
 }
 $(init);
